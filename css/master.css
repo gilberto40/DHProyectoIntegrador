@@ -1,0 +1,764 @@
+/*CCS GLOBAL*/
+*{
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+body{
+  /* background-image: url(../img/bg1.png);
+  background-attachment: fixed; */
+  background-color: #dfdce3;
+}
+
+/* FOOTER */
+footer{
+  display: flex;
+  flex-wrap: wrap;
+  bottom: 0vh;
+  width: 100%;
+  background-color: #474747;
+  color: white;
+  text-align: center;
+}
+._Niicons-foot{
+  font-size: 3em;
+  color: #fc4a1a;
+}
+._Niicons-footRede{
+  font-size: 2em;
+}
+._Nibgcopy{
+  background-color: #2c2c2c;
+  width: 100%;
+}
+
+/*////////////////////////////////////////////// CCS DE EDITAR PERFIL /////////////////////////////////////*/
+._Nibgedit-perf{
+  background-color: #53535394;
+}
+/* CUADRO COMPLETO DE SECTION */
+._NisecP-edit{
+  color: white;
+  background-color: #4abdac;
+  border-radius: 3%;
+  width: 100%;
+}
+/* EDITAR IMG */
+._NiimgPerf-edit{
+  text-align: center;
+  display: block;
+  border-radius: 100%;
+  border: solid #fc4a1a 3px;
+}
+._NiediNom-edit{
+  text-align: center;
+  background-color: #fc4a1a;
+  border: #dfdce3 solid 2px;
+  border-radius: 3%;
+  width: 65%;
+  margin-top: 2vh;
+}
+._NiediPass-edit{
+  text-align: center;
+  background-color:#fc4a1a;
+  border: #dfdce3 solid 2px;
+  border-radius: 3%;
+  width: 65%;
+  margin-top: 2vh;
+}
+._NicampoEscrip-edit{
+  background-color: #dfdce3;
+  border-radius: 10%;
+  width: 20%;
+  border: #f7b733 solid 2px;
+}
+
+
+
+
+/*////////////////////////////////////////////// CCS DE HOME /////////////////////////////////////*/
+/* HAMBURGUESA PERFIL */
+._Nihamb-perfHo{
+  background-color: #f7b733;
+  color: black;
+}
+/* CUADRO COMPLETO DE FOTO DE PERFIL */
+._Nicuadro-perf-ho{
+  background-color: #4abdac;
+  border-radius: 4%;
+}
+._Nifot-perf{
+  border-radius: 100%;
+  border: #fc4a1a solid 3px;
+}
+/* TITULO BIENVENIDO */
+._Nitit-bien-ho{
+  color: #f7b733;
+}
+/* BOTON COMENZAR JUEGO */
+._Nibot-comen-ho{
+  background-color: #fc4a1a;
+  color: #F0EBF4;
+}
+/* HOVER */
+._Nicont-ho ._Nisec-ho ._Niart-ho :hover{
+  color: black;
+  border: black solid 2px;
+}
+
+
+/*////////////////////////////////////////////// CCS DE TABLA /////////////////////////////////////*/
+._Nasec-tab{
+  width: 100%;
+  height: 89vh;
+  background-color: #4abdac;
+  border-radius: 4%;
+}
+._Natitulo-tab{
+  width: 70%;
+  border-bottom: 5px solid #a1c3d1;
+  text-align: center;
+  margin-bottom: 18px;
+}
+._Nah1-tab{
+  font-size: 2.5rem;
+  color: #dfdce3;
+  padding: 3px;
+}
+._Natab-tab{
+  background-color: #4abdac;
+  width: 100%;
+  height: 55vh;
+  border: 3px solid black;
+  text-align: center;
+}
+#nombre{
+  background-color: #dfdce3;
+  border-bottom: 4px solid #f7b733;
+  font-size: 1.5rem;
+}
+#usuario{
+  background-color: #dfdce3;
+}
+._Namedalla{
+  margin-left: 1rem;
+  color: black;
+}
+tr, td{
+  padding: 7px;
+  border-bottom: 2px solid black;
+  font-size: 1rem;
+}
+tr:nth-child(even){
+  background-color: #f7b733;
+}
+tr:hover td{
+  background-color: #f0ebf4ce;
+  color: white;
+}
+
+
+/*////////////////////////////////////////////// CCS DE LOGIN /////////////////////////////////////*/
+
+._Niti-Plogin{
+  background-color: #F0EBF4;
+  width: 30%;
+  border-radius: 3%;
+  color: #e64398;
+  text-decoration: underline #A1C3D1;
+}
+._NiCua-log{
+  background-color:#4abdac;
+  border-radius: 4%;
+  margin-bottom: 20vh;
+}
+._Nius-cla-lo{
+  color: #dfdce3;
+  font-family: Arial;
+}
+._Niimp-log{
+  background-color: #f78833;
+  background-color: #f7b733;
+  border-radius: 10%;
+  border: solid 1px black;
+  border: solid 1px black;
+}
+._Nibot-2log{
+  background-color: #f78833;
+}
+._Nicolor-EnReLo{
+  color: black;
+  
+}
+
+._Nibotreg-log{
+  list-style: none;
+  text-decoration: none;
+  color:black;
+}
+._Niico-cont-log{
+  font-size: 4em;
+  color: #dfdce3;
+}
+._Nimain-log ._NiCua-log ._Nidiv-hoLog :hover{
+  background-color: #dfdce3;
+  color: #fc4a1a;
+  list-style: none;
+}
+
+
+/*////////////////////////////////////////// OLVIDO DE PASSWORD ///////////////////////////////////*/
+/* TITULO */
+._NicamPass{
+  font-size: 1.5em;
+  color: #fc4a1a;
+}
+
+
+/*////////////////////////////////////////////// CCS DE JUEGO /////////////////////////////////////*/
+._NibodySolo-juego{
+  background-color: #535353;
+}
+/*NAV PARA SALIR A PAG PRINCIPAL*/
+._Ninav-ju{
+  display: flex;
+  flex-wrap: wrap;
+}
+._Nifot-nav{
+  border-radius: 100%;
+}
+._Nibot-sal-ju{
+  background-color: #f7b733;
+  color: black;
+  border: solid 2px black;
+}
+
+/*CAJA DE LA PREGUNTA*/
+._Nicaja-pregunta-principal{
+  background-color: #4abdac;
+  height: 35vh;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-radius: 3%;
+}
+._Nititulo-pregunta{
+  padding: 5%;
+  color: white;
+}
+/*CAJITA INFO*/
+._Nicajita-info-ju {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fc4a1a;
+  margin-top: 4vh;
+  width: 100%;
+  height: 8vh;
+  border-radius: 5%;
+  color: white;
+}
+._Niicono-vidas{
+  font-size: 1em;
+}
+/*CAJA DE LAS RESPUESTAS*/
+._Nirespuesta-impar{
+  background-color: #fc4a1a;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 1vh;
+  padding-left: 1vh;
+  align-items: center;
+  width: 70%;
+  margin: auto;
+  margin-top: 2vh;
+  height:6vh;
+  border-radius: 5%;
+  color: white;
+}
+._Nirespuesta-par{
+  background-color: #f7b733;
+  border: black 2px solid;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 1vh;
+  padding-left: 1vh;
+  align-items: center;
+  width: 70%;
+  margin: auto;
+  margin-top: 2vh;
+  height:6vh;
+  border-radius: 5%;
+  color: black;
+}
+._Nicaja-completa-respuestas{
+  margin-top:6vh;
+}
+/* HOVER */
+._NiPnavnav-ju ._Ninav-ju ._Niart-salir-jue :hover{
+  color: #F0EBF4;
+  text-decoration: underline #e64398;
+  border: #F0EBF4 solid 2px;
+}
+
+
+/*////////////////////////////////////////////// CCS DE FAQ /////////////////////////////////////*/
+/* TITULO */
+._Nibgh1-faq{
+  background-color: #F0EBF4;
+  border-radius: 3%;
+  width: 50%;
+}
+._Nititulo-contacto2{
+  font-size: 2.2rem;
+}
+/* LISTADO DE PREGUNTAS */
+._BlistaFaqzItem{
+  display: block;
+  background-color: #f0ebf4;
+  align-content: center;
+  padding: 0.6rem;
+  border: solid 1px #f0f0f0;
+}
+._BlistaFaqTexto{
+  color: #e64398;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-align: center;
+}
+/* SUBTITULOS */
+._Bsubtitulo{
+  font-size: 1.25rem;
+  color: #fc4a1a;
+  text-decoration: underline black;
+}
+/* COLOR Y DISEÑO DE LAS CAJAS */
+._Nicajita-redessociales2{
+  background-color: #dfdce3;
+  text-align: center;
+  border-radius: 3%;
+}
+
+
+
+/*///////////////////////////////////////////// CCS DE REGISTRO //////////////////////////////////*/
+._Nibgh1-registrate{
+  background-color: #dfdce3;
+  border-radius: 4%;
+  
+}
+._NibgblancoR{
+  background-color: #4abdac;
+  border-radius: 2%;
+}
+/* TITULO */
+._Natit-reg{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  color: #fc4a1a;
+}
+/* CUADRO COMPLETO DE SECTION */
+._Nacuadro-completo-reg{
+  display: flex;
+  flex-wrap: wrap;
+}
+._Nadeco-lin-reg{
+  background-color: #fc4a1a;
+  color: #fc4a1a;
+  font-size: 2px;
+  margin-bottom: 2vh;
+}
+._Naico-reg-deco{
+  font-size: 2.5em;
+  color: #fc4a1a;
+  margin-bottom: 10vh;
+}
+/* ARTICLE COMPLETO DE REGISTRO PARTE IZQUIERDA */
+._Nacuadro-info-reg{
+  border-bottom: #fc4a1a solid 3px;
+  border-left: #fc4a1a solid 3px;
+  border-top: #fc4a1a solid 3px;
+  height: 80vh;
+  border-radius: 2%;
+}
+._Nah1-izqui-reg{
+  color: #f7b733;
+}
+._Nah2-izqui-reg{
+  color: #fc4a1a;
+}
+._Nacolor-text-norm{
+  color: black;
+}
+/* ARTICLE COMPLETO DE REGISTRO PARTE DERECHA */
+._Naseccion{
+  width: 100%;
+  border-right: solid #fc4a1a 3px;
+  border-radius: 3%;
+}
+/* CASILLAS DE INFO */
+._Naform-reg ._Nainp-input{
+  border: 2.5px solid #fc4a1a;
+  background-color: #f7b733;
+  text-align: center;
+}
+._Nainp-input{
+  width: 50%;
+  margin: auto;
+}
+/* BOTON DE ENTRAR */
+._Nacolor-entrar{
+  background-color: #fc4a1a;
+  border: none;
+} 
+
+
+/*/////////////////////////////////////////////////CSS DE CONTACTO///////////////////////////////////////*/
+
+/*PRIMER BLOQUE*/
+._Nititulo-contacto{
+  color: #dfdce3;
+  background-color: #4abdac;
+  border: solid 3px black;
+  width: 25%;
+  border-radius: 4%;
+}
+._Nibgmap-cont{
+  background-color: #4abdac;
+}
+._Ni-p-decoration{
+  background-color: black;
+  font-size: 3px;
+  width: 100%;
+}
+._Nih6-fundado{
+  color: white;
+}
+/*LOGOS TEL-MAIL-REDES*/
+._Niicono-general{
+  display: flex;
+  margin: auto;
+  font-size: 3em;
+  color: #fc4a1a;
+}
+/*CAJITA NOMBRE*/
+._Nicajita-nombre{
+  background-color: #4abdac;
+  text-align: center;
+  border-radius: 3%;      
+}
+._Nih3-telefono{
+  color: black;
+  text-decoration: underline #f7b733;
+}
+/*CAJITA MAIL*/
+._Nicajita-email{
+  background-color: #dfdce3;
+  text-align: center;
+  border-radius: 3%;
+  margin-top: 3vh;
+}
+._Nih3-email{
+  color: #f7b733;
+  text-decoration: underline black;
+}
+/*CAJITA REDES*/
+._Nicajita-redessociales{
+  background-color: #4abdac;
+  text-align: center;
+  border-radius: 3%;
+}
+._Nih3-redessociales{
+  color: black;
+  text-decoration: underline #f7b733;
+}
+._Niiconos-redessociales{
+ color: #fc4a1a;
+ font-size: 1.8em;
+}
+/*COLOR CAJITAS INTERCALADO*/
+._Nitext-info1{
+  color: white;
+}
+._Nitext-info2{
+  color: black;
+}
+/*CAJA COMENTARIOS*/
+._Nicaja-comentario{
+  background-color: #4abdac;
+  margin: 2vh;
+  margin-bottom: 10vh;
+  border-radius: 3%;
+}
+._Nitext-comentario{
+  color: white;
+}
+._boton-enviar-comentario{
+  background-color: #fc4a1a;
+  border: solid black;
+  margin-bottom: 4vh;
+}
+._Nicolor-barra{
+  background-color: #f7b733;
+  border: black 2px solid;
+}
+._Niicono-dejatucoment{
+  font-size: 1em;
+}
+._Nidejatucomentario{
+  color: #dfdce3;
+}
+/*ICONO DE DECORACION*/
+._Niico-deco{
+  background-color: #dfdce3;
+  border-radius: 4%;
+  width: 20%;
+  font-size: 3em;
+  margin-top: 6vh;
+  margin-bottom: 6vh;
+  color: #fc4a1a;
+  border: #fc4a1a solid 4px;
+}
+
+
+
+
+/*                                                  RESPONSIVE                                            */
+
+
+/*//////////////////////////////////////////// MIN RESPONSIVE 992 /////////////////////////////////////// */
+@media (min-width: 992px) { 
+  /* HOVER AL NAV
+  header nav .navbar-nav a:hover{
+    text-decoration: underline;
+    border: #e64398 solid 2px;
+    opacity: .5;
+    border-radius: 10%;
+  } */
+
+
+  /*//////////////////////////////////// MIN RESPONSIVE DE CONTACTO (992) /////////////////////////////*/
+  /*MAPA*/
+  ._Nigoogle-maps{
+    height: 80vh;
+  }
+      
+  /*CAJA GRANDE DE MAIL-REDES-TEL*/
+  ._Nimedia-cajas{
+    flex-wrap: wrap;
+  }
+
+  /*CAJITA NOMBRE*/
+  ._Nicajita-nombre {
+    height: 45vh;
+    width: 48%;
+    margin: 5px;      
+  }
+
+  /*CAJITA MAIL*/
+  ._Nicajita-email{
+    height: 45vh;
+    width: 48%;
+    margin: 5px;  
+  }
+
+  /*2 CAJAS TEL Y MAIL*/
+  ._medialg-2cajas{
+    flex-wrap: wrap;
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+  }
+  /*HOVER ENVIAR COMENT*/
+  section ._Nicaja-cometario form ._boton-enviar-comentario:hover{
+    background-color: #f0ebf4;
+    color: #e64398;
+    border:#e64398 solid 2px;
+  }
+  /*/////////////////////////////////////////// MIN RESPONSIVE DE FAQ (992) //////////////////////////////////////////*/
+  ._Bsubtitulo{
+    font-size: 1.45rem;
+  }
+  ._BlistaFaq{
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  }
+  ._BlistaFaq {
+  display: flex;
+  }
+
+  ._BlistaFaq ._BlistaFaqItem  {
+  flex: 1;
+  text-align: center;
+  }
+  /*/////////////////////////////////////////// MIN RESPONSIVE DE JUEGO (992) //////////////////////////////////////////*/
+  ._NiNavde-salida{
+    padding-right: 2vh;
+    padding-left: 2vh;
+  }
+  ._Nisepara-pregunta{
+      display: flex;
+      flex-wrap: nowrap;
+      margin: 2vh;
+  }
+  ._Nirespuesta-impar{
+      width: 35%;
+  }
+  ._Nirespuesta-par{
+      width: 35%;
+  }
+  ._Nicajita-info{
+      margin-top: 10vh
+  }
+  ._Niicono-person{
+      background-color: #f0ebf4;
+      border-radius: 100%;
+      border: #a1c3d1 solid 1px;
+  }
+  ._Nisepara-pregunta :hover{
+      text-decoration: underline #a1c3d1;
+  }
+}
+/*///////////////////////////////////////////// MIN REPONSIVE 768 ////////////////////////////////////////*/
+@media only screen and (min-width: 768px) {
+  /*////////////////////////////////////////// MIN RESPONSIVE DE FAQ (768) //////////////////////////////*/
+  ._Bsubtitulo{
+    font-size: 1.3rem;
+  }
+  ._BlistaFaqTexto{
+    font-size: 1rem;
+  }
+  ._Nititulo-contacto2{
+    font-size: 2.5rem;
+  }
+  /*////////////////////////////////////////// MIN RESPONSIVE DE JUEGO (768) //////////////////////////////*/
+  ._Nirespuesta-juimpar{
+    width: 60%;
+    padding-right: 6vh;
+    padding-left: 6vh;
+  }
+  ._Nirespuesta-jupar{
+    width: 60%;
+    padding-right: 6vh;
+    padding-left: 6vh;
+  }
+  ._Nicajita-info-ju{
+    width: 85%;
+    margin: auto;
+    margin-top: 2vh;
+    height: 10vh;
+    padding-bottom: 3vh
+  }
+  ._Niicono-vidas{
+    font-size: 2em;
+  }
+  ._Nireloj-pregunta-h3{
+    font-size: 2em;
+  }
+  ._Niletra-pregunta{
+    font-size: 1.6em;
+  }
+  ._Nititulo-pregunta{
+    font-size: 2em;
+  }
+}
+/*///////////////////////////////////////////// MIN RESPONSIVE 600 ///////////////////////////////////////////*/
+@media (min-width: 600px) {
+  /*/////////////////////////////////////////// MIN RESPONSIVE DE TABLA (600) ///////////////////////////////*/
+  ._Naseccion-tab{
+    margin: 0 auto;
+    width: 100%;
+    height: 87vh;
+    border-top: 3px solid #f172a1;
+    border-bottom: 3px solid #f172a1;
+    border-radius: 4%;
+    background-color: #a1c3d1;
+  }
+  ._Natabla-tab{
+    background-color: #b39bcb;
+    width: 85%;
+    height: 55vh;
+    border: 3px solid #e64398;
+    text-align: center;
+  }
+
+}
+/*///////////////////////////////////////////// MIN RESPONSIVE 576 ///////////////////////////////////////////*/
+@media (min-width: 576px) { 
+  /*/////////////////////////////////////////// MIN RESPONSIVE DE JUEGO (576) ///////////////////////////////*/
+  ._Nirespuesta-imparju{
+    padding-right: 3vh;
+    padding-left: 3vh;
+  }
+  ._Nirespuesta-parju{
+    padding-right: 3vh;
+    padding-left: 3vh;
+  }
+}
+
+
+
+/*//////////////////////////////////////////// MAX RESPONSIVE 1200 /////////////////////////////////////// */
+@media (max-width: 1200px) {
+  /*/////////////////////////////////////// MAX RESPONSIVE DE REGISTRO (1200) ////////////////////////////*/
+  ._Nibgh1-faq{
+    width: 100%;
+  }
+}
+/*//////////////////////////////////////////// MAX RESPONSIVE 992 /////////////////////////////////////// */
+@media (max-width: 992px) { 
+  /*/////////////////////////////////////// MAX RESPONSIVE DE REGISTRO (992) ////////////////////////////*/
+  ._Nacuadro-info-reg{
+    height: 65vh;
+    width: 100%;
+    margin-bottom: 5vh;
+  }
+}
+/*///////////////////////////////////////////// MAX RESPONSIVE 991.98 //////////////////////////////////////*/
+  @media (max-width: 991.98px) { 
+    /*/////////////////////////////////////// MAX RESPONSIVE DE LOGIN (991.98) ////////////////////////////*/
+    ._Niti-Plogin{
+      width: 100%;
+    }
+    /*/////////////////////////////////////// MAX RESPONSIVE DE CONTACTO (991.98) ////////////////////////////*/
+    ._Niico-deco{
+      width: 50%;
+    }
+  }
+/*//////////////////////////////////////////// MAX RESPONSIVE 767.98 /////////////////////////////////////// */
+@media (max-width: 767.98px) { 
+  /*/////////////////////////////////////// MAX RESPONSIVE DE REGISTRO (767.98) ////////////////////////////*/
+  ._Nacuadro-completo-reg{
+    display: block;
+  }
+  ._Nacuadro-info-reg{
+    height: 85vh;
+    margin-bottom: none;
+  }
+  /*/////////////////////////////////////// MAX RESPONSIVE DE CONTACTO (767.98) ////////////////////////////*/
+  ._Nititulo-contacto{
+    width: 100%;
+  }
+}
+/*///////////////////////////////////////////// MAX RESPONSIVE 600 //////////////////////////////////////*/
+@media (max-width: 600px) { 
+  /*/////////////////////////////////////// MAX RESPONSIVE DE TABLA (600) ////////////////////////////*/
+  ._Natitulo-tab{
+    width: 100%;
+    background-color: #f0ebf4;
+  }
+}
+  
+
+
+
+
+
+
+  

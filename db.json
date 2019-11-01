@@ -1,0 +1,28 @@
+{
+    "usuarios": [
+        {
+            "id": 1,
+            "userName": "Nico",
+            "email": "nico@gmail.com",
+            "password": "$2y$10$QEM3lZ6QALY5aDer9gYDi.mCQpV1P4hR0pD0sCzTgccJrGuce8u36",
+            "rol": 1,
+            "avatar": "nico@gmail.com.png"
+        },
+        {
+            "id": 2,
+            "userName": "Gilberto",
+            "email": "gilberto@gmail.com",
+            "password": "$2y$10$8MmBKiDZvpVfCDMOy1pKf.3kxBUlLvdHmjNwYqHaDcU2CrlDW10p.",
+            "rol": 1,
+            "avatar": "gilberto@gmail.com.jpg"
+        },
+        {
+            "id": 3,
+            "userName": "brian",
+            "email": "brian@gmail.com",
+            "password": "$2y$10$y5qk29dFrwxd7DDtVUPTmuiXschf4T8fDfixpGjG0olIl9STST1mG",
+            "rol": 1,
+            "avatar": "brian@gmail.com.png"
+        }
+    ]
+}

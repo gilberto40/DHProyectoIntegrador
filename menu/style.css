@@ -1,0 +1,352 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+
+nav{
+    display: flex;
+    width:100%;
+    height:8vh;
+    list-style: none;
+    background-color:#4abdac;
+    position: fixed;
+    box-shadow:0 2px 0px 0px rgba(0,0,0,0.5);
+    z-index:4;
+}
+/*boton de login*/
+#logIn{
+   
+    position: absolute;
+    top:10px;
+    right:20%;
+    font-weight:bold;
+    background-color: #4abdac;
+  
+    
+   
+   
+}
+#logIn ion-icon{
+    font-size:1.9rem;
+    color:#f7b733;
+}
+#logIn a{
+    display:flex;
+    flex-wrap:wrap;
+    text-decoration: none;
+    font-family: 'Zhi Mang Xing', cursive;
+    font-size:1.5em;
+}
+#logIn span{
+    display:none;
+}
+/****************************************/
+/**registrarse***/
+#register{
+   display:none;
+}
+/*menu de telefono */
+
+#navMenu{
+    list-style: none;
+    width:100%;
+    height:100vh;
+    opacity:0.98;
+    background-color:#fc4a1a ;
+    position:absolute;
+    left:100%;
+    border:outset 6px #4abdac;
+    transition: 0.3s;
+    
+    
+}
+/* clase otorgada por js para abrir el menu desplegable cuando ocurre el evento de click*/
+#navMenu.abierto{
+    
+    position: absolute;
+    left:0%;
+}
+#navMenu li{
+    width:100%;
+    margin-bottom:3vh;
+    background-color:#4abdac;
+
+}
+
+#navMenu a{
+    display: block;
+    width:100%;
+    text-decoration: none;
+    color:rgba(0, 0,0, 1);
+    font-size: 2.5em;
+    
+    
+    
+}
+
+/*************************************************/
+/* boton hamburguesa*/
+/*boton para cerrar el menu desplegable */
+#botonMenuCerrar{
+    font-size: 2em;
+    border:none;
+    background-color: #fc4a1a;
+    position: absolute;
+    top:23px;
+    right:5%;
+}
+#botonMenu{
+    border: none;
+    background-color: #4abdac;
+    position:absolute;
+    top:8px;
+    left:85%;
+
+}
+#botonMenu ion-icon{
+    font-size: 2rem;
+}
+/*****************************/
+/*logo */
+#logo{
+    position:absolute;
+    top:2px;
+    left:0%;
+    
+}
+
+#logoMenu img{
+    width:250px;
+
+    position:absolute;
+    top:12px;
+    left:2%;
+}
+/*opciones para desc*/
+#menuDesc{
+    display:none;
+}
+/*********************************/
+/*menu desplegable del boton de hamburguesa*/
+#opciones{
+    width:100%;
+    position:absolute;
+    top:22vh;
+    left:0%;
+    background-color: #4abdac;
+    font-family:  'Play', sans-serif;
+
+}
+#opciones a {
+    padding-left: 15%;
+}
+#reg a{
+    color:#f7b733;
+    font-weight:bold;
+    
+    
+}
+/**********************************/
+
+
+
+    #botonPerfil{
+        width: 42px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: absolute;
+        top:3px;
+        right:20%;
+    }
+    #botonPerfil img{
+        align-self: center;
+        width:100%;
+        border-radius:90%;
+    }
+    #botonPerfil div{ 
+        display: none;
+    }
+   
+    #opcionesUsuario{
+        font-size:1.3em;
+        text-align: center;
+        z-index:2;
+        list-style: none;
+        color: black;
+        height:20vh;
+        width: 30%;
+        background-color:red;
+        position: absolute;
+        top:8vh;
+        left:-30%;
+        transition: 0.2s;
+      
+    }
+    #opcionesUsuario a {
+      text-decoration: none;  
+    }
+    #opcionesUsuario.cerrar{
+       
+        left:0;
+    
+    }
+
+    #juega{
+        display:none;
+    }
+    #jugar{
+        font-size:1.6em;
+        font-weight:bolder;
+       
+    }
+    #jugar a{
+        color:#fc4a1a; 
+        background-color: #f7b733;
+        width:100%;
+
+    }
+
+ @media(min-width :430px){
+     #logIn{
+       
+         right:2%;
+
+         border-left:solid 2px #f7b733;
+         font-size:1rem; 
+         
+     }
+     #logIn ion-icon{
+         color:black;
+     }
+     #logIn span{
+        font-family: 'Staatliches', cursive;
+        color:#f7b733;
+        font-weight:bold;
+         display:block;
+     }
+     
+     #logo{
+         left:10%;
+     }
+
+     #botonMenu{
+         left:2%;
+     }
+     #botonPerfil{
+        width: 130px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top:3px;
+        right:2%;
+        background-color: #f7b733;
+        box-shadow:1px 2px 4px 0px;
+        border-radius:5%;
+    }
+    #botonPerfil img{
+        margin-right:4px;
+        align-self: center;
+        width:42px;
+        border-radius:90%;
+    }
+    #botonPerfil div{ 
+        display: block;
+    }
+    #botonPerfil span{
+        font-family:'Staatliches', cursive;
+        font-weight:bold;
+    }
+ }   
+
+ @media (min-width: 576px) {
+     #register{
+         display:block;
+         position:absolute;
+         right:2%;
+         top:10px;
+         font-family:'Staatliches', cursive;
+         padding-left:2px;
+         border-left:solid 2px #fc4a1a;
+
+        
+     }
+     #register a{
+         text-decoration:none;
+         color:#fc4a1a;
+         font-weight:bold;
+         font-size:1.5em;
+     }
+     #logIn{
+         right:23%;
+     }
+   
+#logo{
+    left:8%;
+}
+
+#reg{
+    display:none;
+}
+/*boton cuando el usuario esta logueado carga su foto de perfil*/
+#botonPerfil{
+    right:5%;
+}
+
+ }
+ @media (min-width: 768px) {
+    
+     #logo{
+        top:2px;
+        left:0%;
+     }
+     #logIn{
+         right:18%;
+     }
+    #botonMenu{
+        display: none;
+    }
+    #menuDesc{
+        font-family: 'Play', sans-serif;
+        font-size:1rem;
+        font-weight: bold;
+        width:30%;
+        display:flex;
+        justify-content: space-around;
+        position:absolute;
+        top:0;
+        left:28%;
+      
+        list-style: none;
+
+    }
+    #menuDesc li{
+        height:8vh;
+        width:100px;
+        
+    }
+    #menuDesc a{
+        display:block;
+        text-align: center;
+        padding-top: 2vh;
+        width:100%;
+        height:8vh;
+        text-decoration: none;
+        color:black;
+    }
+    
+   #menuDesc li:hover{
+       background-color: #f7b733;
+
+   }
+   #menuDesc a:hover{
+       color:#be3b16;
+   }
+
+  
+
+}
