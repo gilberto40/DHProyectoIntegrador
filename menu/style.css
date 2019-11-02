@@ -158,17 +158,10 @@ nav{
         flex-wrap: wrap;
         justify-content: center;
         position: absolute;
-        top:3px;
+        top:15px;
         right:20%;
     }
-    #botonPerfil img{
-        align-self: center;
-        width:100%;
-        border-radius:90%;
-    }
-    #botonPerfil div{ 
-        display: none;
-    }
+
    
     #opcionesUsuario{
         font-size:1.3em;

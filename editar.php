@@ -4,6 +4,27 @@ if(isset($_SESSION['email'])){
     $usuario=buscarPorEmail($_SESSION['email']);
     $userName = $usuario['userName'];
     $avatar =$usuario['avatar'];
+    $passwordAnt = $usuario['password'];
+    if($_POST){
+  
+    $errores=validarPasswordEdit($_POST);
+    if(!$errores){
+        if($_FILES){
+            $errorAvatar = validarNewAvatar();
+            if(!$errorAvatar){ 
+            $ext = pathinfo($_FILES['newAvatar']['name'],PATHINFO_EXTENSION);
+            move_uploaded_file($_FILES['newAvatar']['tmp_name'],'fotos/'.$_SESSION['email'].".".$ext);
+        }
+      
+        }
+        var_dump( editarRegistro($_POST));
+        
+    }
+    
+    // if($errores == 0){
+    //    grabe la edicion que hicimos  
+    // }
+    }
 }
 ?>
 

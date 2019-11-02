@@ -2,17 +2,17 @@
     "usuarios": [
         {
             "id": 1,
-            "userName": "Nico",
+            "userName": "Alex",
             "email": "nico@gmail.com",
-            "password": "$2y$10$QEM3lZ6QALY5aDer9gYDi.mCQpV1P4hR0pD0sCzTgccJrGuce8u36",
+            "password": "$2y$10$d7yyWqBMqz2owrZ4\/w377OQTji\/otD..PTv8OTc7L6gZC8Y8ePeIi",
             "rol": 1,
-            "avatar": "nico@gmail.com.png"
+            "avatar": "nico@gmail.com.jpg"
         },
         {
             "id": 2,
-            "userName": "Gilberto",
+            "userName": "sdfghjk",
             "email": "gilberto@gmail.com",
-            "password": "$2y$10$8MmBKiDZvpVfCDMOy1pKf.3kxBUlLvdHmjNwYqHaDcU2CrlDW10p.",
+            "password": "$2y$10$.VCRS373nYx8rzNV7HPWD.QlzjPYPOZCL5y7gcibyItealwGbH3xq",
             "rol": 1,
             "avatar": "gilberto@gmail.com.jpg"
         },
@@ -23,6 +23,14 @@
             "password": "$2y$10$y5qk29dFrwxd7DDtVUPTmuiXschf4T8fDfixpGjG0olIl9STST1mG",
             "rol": 1,
             "avatar": "brian@gmail.com.png"
+        },
+        {
+            "id": 4,
+            "userName": "gilberto",
+            "email": "gilbertomaterano40@gmail.com",
+            "password": "$2y$10$Po.GwgPbMCAocRP3tRjPteh0DV5IoCIIfYaGO6vrDW8MSceAAlDVW",
+            "rol": 1,
+            "avatar": "gilbertomaterano40@gmail.com.jpg"
         }
     ]
 }

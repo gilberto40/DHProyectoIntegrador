@@ -24,7 +24,7 @@ if($_POST){
 </head>
 
 
-<body class="_Nieditar-body">
+<body>
 
   <div class="container">
     

@@ -12,9 +12,9 @@
     <link href="https://fonts.googleapis.com/css?family=Play|Staatliches&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="menu/style.css">
-
 <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="menu/style.css">
+
 
 </head>
 <body>
@@ -28,7 +28,7 @@
                 <img src="menu/foto-default.png" alt="">
               
                     <div>
-                        <span> Gilberto40 </span>  
+                        <span><?=$userName;?> </span>  
                             
                         </div>        
                     </div>
@@ -36,13 +36,13 @@
                     
                     <li><a href="">Tu Ranking</a></li>
                     <hr>
-                    <li><a href="">Editar Perfil</a></li>
+                    <li><a href="editar.php">Editar Perfil</a></li>
                     <hr>
                     <li><a href="cerrarSesion.php">Salir</a></li>
                 </div>
         <?php ;}else{?>
-                <li id="logIn"><a href="logIn.php"><ion-icon name="log-in"></ion-icon><span>Iniciar Sesion</span></a></li>
-                <li id="register"><a href="register.php">Registrarse</a></li>
+                <li id="logIn"><a href="index.php"><ion-icon name="log-in"></ion-icon><span>Iniciar Sesion</span></a></li>
+                <li id="register"><a href="registro.php">Registrarse</a></li>
                 
         <?php ;}?>
         <li id="logo"><a href=""><img src="menu/logochico.png" alt=""></a></li>
