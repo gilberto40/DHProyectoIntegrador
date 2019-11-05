@@ -20,7 +20,7 @@
 <body>
     <header>
     <nav>
-        <?php if($_SESSION){?> 
+        <?php if(isset($_SESSION['email'])){?> 
              <div id="juega">
                     JUGAR!
                 </div>
@@ -63,7 +63,7 @@
                     <ion-icon name="close-circle"></ion-icon>
             </button>
             <div id="opciones">
-                <?php if(!$_SESSION){?>
+                <?php if(!isset($_SESSION['email'])){?>
                 <li id="reg"><a href="">Registro</a></li>
                 <?php ;}else{?>
                     <li id="jugar"><a href="homeJuego.php" id="palabra">JUGAR!!!</a></li>

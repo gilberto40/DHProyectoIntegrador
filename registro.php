@@ -1,6 +1,7 @@
 <!-- CODIGO PHP -->
 <?php 
   include_once "functions/funciones.php";
+  include_once "loader.php";
     // Camino de la registración.
   // 1) Chequear que el formulario este cargando por POST.
   // 2) Validar los datos del formualario.
@@ -16,22 +17,21 @@
     exit;
   }
   if($_POST){
-    //2
-    $errores = validarDatos($_POST);
-    $userNameOk= trim($_POST['userName']);
-    $emailOk= trim($_POST['email']);
-    // var_dump($errores);
-    // exit;
+
+    $ext = pathinfo($_FILES['avatar']['name'],PATHINFO_EXTENSION);
+    $usuario = new Usuario($_POST['userName'],$_POST['email'],$_POST['password'],$_POST['confirmPassword'],$_POST['email'].".".$ext);
+    $errores = Validador::validarDatos($usuario);
+   
+  //  var_dump($errores);
+  //    exit;
   
     if(!$errores){
-      $usuario = crearUsuario($_POST);
-      guardarUsuario($usuario);
-      $ext = pathinfo($_FILES['avatar']['name'],PATHINFO_EXTENSION);
-      move_uploaded_file($_FILES['avatar']['tmp_name'],"fotos/".$_POST['email'].".".$ext);
+      $baseJson->crear($usuario);
+      move_uploaded_file($_FILES['avatar']['tmp_name'],"fotos/".$usuario->getAvatar());
       //luego de crear el usuario y guardar todos sus datos y avatar, si todo esta bien logueramos al usuario y lo redirigiremos automaticamente al home
-      loguearUsuario($_POST['email']);
-      header("Location:homeJuego.php");
-      exit;
+      // loguearUsuario($_POST['email']);
+      // header("Location:homeJuego.php");
+      // exit;
     }
   }
 ?>
@@ -80,7 +80,7 @@
             <div class="form-group text-white">
 
               <label for=""><i class="fas fa-user" ></i> Usuario</label>
-              <input type="text" class="form-control _Nainp-input" id="userName" aria-describedby="emailHelp" placeholder="Nombre de Usuario" name="userName" value="<?php reincidencia('userName');?>">
+              <input type="text" class="form-control _Nainp-input" id="userName" aria-describedby="emailHelp" placeholder="Nombre de Usuario" name="userName" value="<?php $baseJson->reincidencia('userName');?>">
               <!--Impresion de error USER NAME-->
               <?php if(isset($errores['userName'])){ ?>
                 <div class="alert alert-danger" role="alert">
@@ -94,7 +94,7 @@
             <div class="form-group text-white">
 
               <label for=""><i class="fas fa-envelope"></i> Email</label>
-              <input type="Email" class="form-control _Nainp-input" id="email"  placeholder="Email" name="email" value="<?php reincidencia('email');?>">
+              <input type="Email" class="form-control _Nainp-input" id="email"  placeholder="Email" name="email" value="<?php $baseJson->reincidencia('email');?>">
               <!--Impresion de error EMAIL-->
               <?php if(isset($errores['email'])){ ?>
                 <div class="alert alert-danger" role="alert">

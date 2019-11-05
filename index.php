@@ -1,6 +1,5 @@
 <?php 
-  include_once "functions/funciones.php";
-
+  include_once "loader.php";
   
 // Proceso de login
 //===========================
@@ -15,18 +14,18 @@
  
   if(isset($_COOKIE['email'])){
     //Si está seteada la cookie es porque el usuario tildó recordarme. Vamos a loguerarlo desde la cookie.
-    loguearUsuario($_COOKIE['email']);
+    LogIn::loguearUsuario($_COOKIE['email']);
   }else{
-    if(usuarioLogueado()){
+    if(LogIn::verificar()){
       header("Location:homeJuego.php");
       exit;
   }else{
       if($_POST){
-        $errores = validarLogIn($_POST);
-        // var_dump($errores);
-        // exit;
+        $logIn = new LogIn($_POST['emailLogIn'],$_POST['passwordLogIn']);
+        $errores = Validador::validarLogIn($logIn,$baseJson);
+  
         if(!$errores){
-          loguearUsuario($_POST['emailLogIn']);
+          LogIn::loguearUsuario($_POST['emailLogIn']);
           
           if(!$_SESSION){
             $_SESSION['email']=$_COOKIE['email'];

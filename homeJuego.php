@@ -1,7 +1,7 @@
 <?php
-include_once "functions/funciones.php";
+include_once "loader.php";
 if(isset($_SESSION['email'])){
-  $usuario=buscarPorEmail($_SESSION['email']);
+  $usuario=$baseJson->buscarPorEmail($_SESSION['email']);
   $userName = $usuario['userName'];
  $avatar =$usuario['avatar'];
 }else{
