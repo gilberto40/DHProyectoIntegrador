@@ -12,13 +12,12 @@
     <link href="https://fonts.googleapis.com/css?family=Play|Staatliches&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="menu/style.css">
 
+<link rel="stylesheet" href="menu/style.css">
+<link rel="stylesheet" href="css/master.css">
 
 </head>
 <body>
-    <header>
     <nav>
         <?php if(isset($_SESSION['email'])){?> 
              <div id="juega">
@@ -28,14 +27,11 @@
                 <img src="menu/foto-default.png" alt="">
               
                     <div>
-                        <span><?=$userName;?> </span>  
+                        <span> <?php echo $userName?> </span>  
                             
                         </div>        
                     </div>
                 <div id="opcionesUsuario">
-                    
-                    <li><a href="">Tu Ranking</a></li>
-                    <hr>
                     <li><a href="editar.php">Editar Perfil</a></li>
                     <hr>
                     <li><a href="cerrarSesion.php">Salir</a></li>
@@ -45,11 +41,11 @@
                 <li id="register"><a href="registro.php">Registrarse</a></li>
                 
         <?php ;}?>
-        <li id="logo"><a href=""><img src="menu/logochico.png" alt=""></a></li>
+        <li id="logo"><a href="registro.php"><img src="menu/logochico.png" alt=""></a></li>
         <div id="menuDesc">
-            <li><a href="">Ranking</a></li>
-            <li><a href="">FAQ</a></li>
-            <li><a href="">Contacto</a></li>
+            <li><a href="tablas.php">Ranking</a></li>
+            <li><a href="faq.php">FAQ</a></li>
+            <li><a href="contacto.php">Contacto</a></li>
         </div>
         <button id="botonMenu">
             <ion-icon name="menu"></ion-icon>
@@ -64,14 +60,14 @@
             </button>
             <div id="opciones">
                 <?php if(!isset($_SESSION['email'])){?>
-                <li id="reg"><a href="">Registro</a></li>
+                <li id="reg"><a href="registro.php">Registro</a></li>
                 <?php ;}else{?>
                     <li id="jugar"><a href="homeJuego.php" id="palabra">JUGAR!!!</a></li>
                 <?php ;}?>
-                <li><a href="">Ranking</a></li>
-                <li><a href="">FAQ</a></li>
-                <li><a href="">Contacto</a></li>
+                <li><a href="tablas.php">Ranking</a></li>
+                <li><a href="faq.php">FAQ</a></li>
+                <li><a href="contacto.php">Contacto</a></li>
             </div>
         </div>
     </nav>
-  </header>
+  

@@ -11,32 +11,19 @@ if($_POST){
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contacto</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-<link rel="stylesheet" href="css/master.css">
-</head>
 
-
-<body>
+<?php include_once "menu/navBar.php";?>
 
   <div class="container">
     
     <section>
-      <h1 class="text-center _Nititulo-contacto mt-5 mb-5">Contacto</h1>
+      <article class="row">
+        <h1 class="text-center _Nititulo-contacto">Contacto</h1>
+      </article>
+      
+      <h6 class="_Nih6-fundado ml-3">Fundado por:</h6>
       <article class="_Nibgmap-cont">
-        <p class="_Ni-p-decoration">decoration</p>
-        <article>
-          <h6 class="_Nih6-fundado ml-3">Fundado por:</h6>
-          <iframe class="d-block w-100 _Nigoogle-maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13144.754182067678!2d-58.44516482872966!3d-34.548781260066264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb436efe09303%3A0xfb39818e7624ac76!2sDigital%20House!5e0!3m2!1ses!2sar!4v1568033511485!5m2!1ses!2sar" width="100" height="100" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-          <p class="_Ni-p-decoration mt-3">decoration</p>
-        </article>
+          <iframe class="d-block w-100 _Nigoogle-maps"  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3286.19325518621!2d-58.4439337!3d-34.548662!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb436efe09303%3A0xfb39818e7624ac76!2sDigital%20House!5e0!3m2!1ses!2sar!4v1572914223062!5m2!1ses!2sar" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
       </article>
     </section>
 
@@ -94,13 +81,14 @@ if($_POST){
           <h2 class="m-auto"><ion-icon class="mt-4 mr-3 _Niicono-dejatucoment" name="thumbs-up"></ion-icon>Deja tu comentario por acá<ion-icon class=" ml-3 _Niicono-dejatucoment" name="arrow-round-down"></ion-icon></h2>
         </article>
                         
-        <form class="col-12 mx-auto text-center mt-4" method="post">
+        <form class="mx-auto text-center mt-4" method="post">
 
-          <div class="form-group d-flex ">
+          <div class="col-8 form-group text-center">
             <label class="_Nitext-comentario" for="nombreC">Nombre</label>
-            <input type="text" class="form-control ml-2 mr-2 _Nicolor-barra" id="text" name="nombreC" >
+            <input type="text" class="_Nicolor-barra _NiTw-barr" id="text" name="nombreC" >
+            <br>
             <label class="_Nitext-comentario" for="apellidoC">Apellido</label>
-            <input type="text" class="form-control ml-2 _Nicolor-barra" id="apellido"  name="apellidoC">
+            <input type="text" class="_Nicolor-barra _NiTw-barr" id="apellido"  name="apellidoC">
           </div>
 
           <div class="form-group">
@@ -109,7 +97,7 @@ if($_POST){
           </div>
           
           <div  class="botonesLogin">
-            <button type="submit" class="col-5 btn btn-primary btn-sm _boton-enviar-comentario">Enviar</button>
+            <button type="submit" class="btn btn-primary btn-sm _boton-enviar-comentario">Enviar</button>
           </div>
 
         </form>
@@ -120,13 +108,6 @@ if($_POST){
 
   </div>
   
-  <footer>
-          <?php   include "footer.php"; ?>
+  <footer class="mt-5">
+    <?php   include "footer.php"; ?>
   </footer>
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
-</html>

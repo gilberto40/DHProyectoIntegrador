@@ -1,31 +1,31 @@
 <?php
-include_once "functions/funciones.php";
+include_once "loader.php";
 if(isset($_SESSION['email'])){
-    $usuario=buscarPorEmail($_SESSION['email']);
+    $usuario=$baseJson->buscarPorEmail($_SESSION['email']);
     $userName = $usuario['userName'];
     $avatar =$usuario['avatar'];
+    $id=$usuario['id'];
     $passwordAnt = $usuario['password'];
     if($_POST){
   
-    $errores=validarPasswordEdit($_POST);
+    $errores=Validador::validarEdit($_POST,$baseJson);
+    
     if(!$errores){
         if($_FILES){
-            $errorAvatar = validarNewAvatar();
+            $errorAvatar = Validador::validarNewAvatar();
             if(!$errorAvatar){ 
             $ext = pathinfo($_FILES['newAvatar']['name'],PATHINFO_EXTENSION);
             move_uploaded_file($_FILES['newAvatar']['tmp_name'],'fotos/'.$_SESSION['email'].".".$ext);
         }
+
       
         }
-        var_dump( editarRegistro($_POST));
-        
+        $baseJson->update($baseJson,$usuario);
     }
-    
-    // if($errores == 0){
-    //    grabe la edicion que hicimos  
-    // }
     }
 }
+
+    
 ?>
 
 
@@ -43,25 +43,43 @@ if(isset($_SESSION['email'])){
 
 <body class="_Nibgedit-perf">
 
+            <section class="_Ninav-ju mt-2">
+                
+                <article>
+                <a class=""><img class="_Nifot-nav" width="50" heigth="50" src="fotos/foto-default.png" alt=""></a>
+                </article>
+            
+                <article class="_Niart-salir-jue">
+                    <a href="homeJuego.php" class="btn _Nibot-sal-ju btn-lg active" role="button" aria-pressed="true">Salir</a>
+                </article>
+
+            </section>
 
     <div class="container">
+    
+        <?php
+        if(isset($errores)){
+        foreach($errores as $value){
+
+            echo $value;
+        }
+
+        }?>
 
         <form class="" action="" method="post" enctype="multipart/form-data">
 
             <section class="_NisecP-edit text-center">
+                <h1 class="_Nih1edit-perf">Editar perfil</h1>
 
-                <h5><?php echo $userName;?> quisieras editar tu usuario?</h5>
-                <p><ion-icon name="arrow-round-down"></ion-icon>ESTAS EN EL SITIO INDICADO.!<ion-icon name="arrow-round-down"></ion-icon></p>
-                <h1><ion-icon name="happy"></ion-icon></h1>
-                <article class="mt-2">
+                <article class="_NiTtex-edit text-center">
                     <img class="_NiimgPerf-edit" src="<?php if (strlen($avatar) == 0){echo "fotos/foto-default.png";}else{echo "fotos/".$avatar;}?>" alt="" width="250" height="250">
-                    <h6 class="">Editar foto</h6>
+                    <h4 class="mt-2">Editar foto</h4>
                     <label for="">New Foto</label>
                     <input type="file" class="" id="newAvatar" name="newAvatar">
                     <hr>
                 </article>
 
-                <article class="_NiediNom-edit">
+                <article class="_NiediNom-edit col-5">
                     <br>
                     <h4 class="text-center">Editar Nombre</h4>
                     <article class="text-center">
@@ -71,7 +89,7 @@ if(isset($_SESSION['email'])){
                     <br>
                 </article>
 
-                <article class="_NiediPass-edit">
+                <article class="_NiediPass-edit col-5">
                     <h4>Editar Password</h4>
                     <article>
                         <label for="">Password Actual</label>

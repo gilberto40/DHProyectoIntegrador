@@ -2,11 +2,35 @@
     "usuarios": [
         {
             "id": 1,
-            "userName": "gilberto",
-            "email": "gilbertomaterano40@gmail.com",
-            "password": "$2y$10$cqbQlsEMan90c39QpVDDfuBesF.Fk2icCks5Pj23Mqkt7EI8mtqBy",
+            "userName": "CONY",
+            "email": "nico@gmail.com",
+            "password": "7654321",
             "rol": 1,
-            "avatar": "gilbertomaterano40@gmail.com.jpg"
+            "avatar": "nico@gmail.com.png"
+        },
+        {
+            "id": 2,
+            "userName": "Gilberto",
+            "email": "gilberto@gmail.com",
+            "password": "$2y$10$8MmBKiDZvpVfCDMOy1pKf.3kxBUlLvdHmjNwYqHaDcU2CrlDW10p.",
+            "rol": 2,
+            "avatar": "gilberto@gmail.com.jpg"
+        },
+        {
+            "id": 3,
+            "userName": "elon",
+            "email": "tesla@gmail.com",
+            "password": "$2y$10$X1wj7N32VvkMQPW07LpOzuRofLejGMWHTZ3e\/ft.sfK7DpKQRufoS",
+            "rol": 1,
+            "avatar": "tesla@gmail.com.jpg"
+        },
+        {
+            "id": 4,
+            "userName": "airim",
+            "email": "ant@gmail.com",
+            "password": "$2y$10$FLG5N9tMP\/rPWnpFRFwrSehfHGyAergA.rl2tN3IqZw1xBT6l.VD6",
+            "rol": 1,
+            "avatar": "ant@gmail.com.jpg"
         }
     ]
 }

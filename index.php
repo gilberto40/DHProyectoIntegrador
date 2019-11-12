@@ -1,5 +1,6 @@
 <?php 
   include_once "loader.php";
+
   
 // Proceso de login
 //===========================
@@ -16,21 +17,28 @@
     //Si está seteada la cookie es porque el usuario tildó recordarme. Vamos a loguerarlo desde la cookie.
     LogIn::loguearUsuario($_COOKIE['email']);
   }else{
-    if(LogIn::verificar()){
+    if(LogIn::Verificar()){
       header("Location:homeJuego.php");
       exit;
   }else{
       if($_POST){
         $logIn = new LogIn($_POST['emailLogIn'],$_POST['passwordLogIn']);
         $errores = Validador::validarLogIn($logIn,$baseJson);
-  
+        // var_dump($errores);
+        // exit;
         if(!$errores){
           LogIn::loguearUsuario($_POST['emailLogIn']);
           
           if(!$_SESSION){
             $_SESSION['email']=$_COOKIE['email'];
           }
+          $usu = $baseJson->buscarPorEmail($_SESSION['email']);
+          $rol = $usu['rol'];
+          if($rol == 2){
+            header('Location:homeAdmin.php');
+          }else{
           header("Location:homeJuego.php");
+        }
       } 
     }
   }
@@ -43,7 +51,7 @@
       <div class="container">
         <main class="row _Nimain-log  ">
                       <!-- habia un margin ridht 0 (mr-0)en la clase de main  -->
-            <form class="col-lg-4 col-md-6 col-sm-8 col-8 _NiCua-log text-center mt-5 " action="index.php" method="post">
+            <form class="col-lg-4 col-md-6 col-sm-8 col-8 _NiCua-log text-center " action="index.php" method="post">
                 <!---cambie las medidas de el form en bootstap le reste dos a cada medida y coloque una medida para "xs"-->
                 <!--Impresion de errores-->         
                 <?php if(isset($errores)){ ?>
@@ -81,8 +89,6 @@
 
       </div>    
 
-      <footer>
         <?php   include "footer.php"; ?>
-      </footer>
+      
 
-</html>

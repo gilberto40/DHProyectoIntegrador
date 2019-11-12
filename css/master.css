@@ -1,16 +1,13 @@
-@import 'style.css'
 /*CCS GLOBAL*/
 *{
   box-sizing: border-box;
   margin: 0 auto;
   padding: 0;
 }
+/* BODY */
 body{
-  /* background-image: url(../img/bg1.png);
-  background-attachment: fixed; */
   background-color: #dfdce3;
 }
-
 /* FOOTER */
 footer{
   display: flex;
@@ -33,14 +30,140 @@ footer{
   width: 100%;
 }
 
+
+/* ---------------------------------------------- CSS ADMINISTRADOR---------------------------------------- */
+/*////////////////////////////////////////////////// PREGUNTAS ////////////////////////////////////////////*/
+._Nih1preg{
+  color: #f7b733;
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+}
+._Nibotpreg{
+ margin-left: 75%;
+ margin-bottom: 5vh;
+}
+._NiBsalPreg{
+  background-color: rgb(71, 71, 71);
+  color: #f7b733;
+  border: solid 1px #f7b733;
+}
+._NiBeditpreg{
+  background-color: #f7b733;
+  border: solid 1px black;
+}
+._NiTpreg{
+  background-color: #4abdac;
+}
+/*/////////////////////////////////////////// CSS EDITAR PREGUNTAS //////////////////////////////////*/
+._NiTh1edit-preg{
+  text-align: center;
+  color: #f7b733;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+._Niingresa-preg{
+  background-color: #4abdac;
+  border-radius: 4%;
+  width: 60%;
+  height: 25vh;
+  color: #dfdce3;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+._NicampEPreg{
+  width: 80%;
+  background-color: #4abdac;
+  color: #dfdce3;
+  font-size: 1.5em;
+  border: #4abdac;
+  margin: auto;
+}
+._NicampR-editP{
+  background-color: #f7b733;
+  border: solid 1px black;
+  border-radius: 10%;
+  width: 100%;
+  margin-top: 5vh;
+}
+._Nipart1-Epreg{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5vh;
+  font-size: 1.2em;
+}
+._Nipart2-Epreg{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5vh;
+  font-size: 1.2em;
+}
+/*////////////////////////////////////////////// CCS HOME ADMIN /////////////////////////////////////*/
+._NihomPreg{
+  text-align: center;
+  color: #f7b733;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  font-size: 2.5em;
+}
+._Nih1adm-Hom{
+  text-align: center;
+  color: #f7b733;
+  font-size: 1.7em;
+  padding-top: 2vh;
+}
+._NicuaHom-adm{
+  background-color: #4abdac;
+  width: 40%;
+  height: 40vh;
+  border-radius: 4%;
+}
+._NiimgAdm-hom{
+  display: block;
+  margin: auto;
+}
+._Nibtns-hom{
+  background-color: #fc4a1a;
+  border: solid 1px black;
+}
+/*////////////////////////////////////////////// CCS AGREGAR ADMIN /////////////////////////////////////*/
+._Nih1aggAdm{
+  text-align: center;
+  color: #f7b733;
+  margin-bottom: 5vh;
+  margin-top: 3vh;
+}
+._NicuaAgg-adm{
+  background-color: #4abdac;
+  border-radius: 5%;
+  height: 75vh;
+  padding-top: 10vh;
+}
+._NilogoAgg-admin{
+  margin: auto;
+  margin-bottom: -8vh;
+  z-index: 100;
+  background-color: #4abdac;
+  border: solid 3px #fc4a1a;
+  border-radius: 100%;
+}
+._NibotSal-aggAdm{
+  background-color: #f7b733;
+  border: black solid 1px;
+  margin-left: 60%;
+}
+
+
+
+/* ---------------------------------------------- CSS JUGADOR --------------------------------------------- */
 /*////////////////////////////////////////////// CCS DE EDITAR PERFIL /////////////////////////////////////*/
-._Nibgedit-perf{
-  background-color: #53535394;
+._Nih1edit-perf{
+  color: #f7b733;
+  margin-top: 3%;
+  margin-bottom: 3%;
 }
 /* CUADRO COMPLETO DE SECTION */
 ._NisecP-edit{
-  color: white;
-  background-color: #4abdac;
   border-radius: 3%;
   width: 100%;
 }
@@ -49,11 +172,16 @@ footer{
   text-align: center;
   display: block;
   border-radius: 100%;
-  border: solid #fc4a1a 3px;
+  border: solid #fc4a1a 4px;
+}
+._NiTtex-edit{
+  font-size: 1.2em;
+  color:#fc4a1a;
 }
 ._NiediNom-edit{
   text-align: center;
-  background-color: #fc4a1a;
+  color: #dfdce3;
+  background-color: #4abdac;
   border: #dfdce3 solid 2px;
   border-radius: 3%;
   width: 65%;
@@ -61,20 +189,19 @@ footer{
 }
 ._NiediPass-edit{
   text-align: center;
-  background-color:#fc4a1a;
+  color: #dfdce3;
+  background-color:#4abdac;
   border: #dfdce3 solid 2px;
   border-radius: 3%;
   width: 65%;
-  margin-top: 2vh;
+  margin-top: 6vh;
 }
 ._NicampoEscrip-edit{
-  background-color: #dfdce3;
+  background-color: #f7b733;
   border-radius: 10%;
-  width: 20%;
-  border: #f7b733 solid 2px;
+  width: 30%;
+  border: black solid 1px;
 }
-
-
 
 
 /*////////////////////////////////////////////// CCS DE HOME /////////////////////////////////////*/
@@ -94,7 +221,7 @@ footer{
 }
 /* TITULO BIENVENIDO */
 ._Nitit-bien-ho{
-  color: #f7b733;
+  color: #dfdce3;
 }
 /* BOTON COMENZAR JUEGO */
 ._Nibot-comen-ho{
@@ -114,14 +241,16 @@ footer{
   height: 89vh;
   background-color: #4abdac;
   border-radius: 4%;
+  margin-top: 20vh;
+  margin-bottom: 10vh;
 }
 ._Natitulo-tab{
   width: 70%;
-  border-bottom: 5px solid #a1c3d1;
   text-align: center;
   margin-bottom: 18px;
 }
 ._Nah1-tab{
+  margin-bottom: 5vh;
   font-size: 2.5rem;
   color: #dfdce3;
   padding: 3px;
@@ -130,12 +259,13 @@ footer{
   background-color: #4abdac;
   width: 100%;
   height: 55vh;
-  border: 3px solid black;
+  border-right: 3px solid #fc4a1a;
+  border-left: 3px solid #fc4a1a;
   text-align: center;
 }
 #nombre{
   background-color: #dfdce3;
-  border-bottom: 4px solid #f7b733;
+  border-bottom: 4px solid #fc4a1a;
   font-size: 1.5rem;
 }
 #usuario{
@@ -151,11 +281,11 @@ tr, td{
   font-size: 1rem;
 }
 tr:nth-child(even){
-  background-color: #f7b733;
+  background-color: #dfdce3;
 }
 tr:hover td{
-  background-color: #f0ebf4ce;
-  color: white;
+  background-color: #000000b9;
+  color: #fc4a1a;
 }
 
 
@@ -171,7 +301,8 @@ tr:hover td{
 ._NiCua-log{
   background-color:#4abdac;
   border-radius: 4%;
-  margin-bottom: 20vh;
+  margin-bottom: 15vh;
+  margin-top: 20vh;
 }
 ._Nius-cla-lo{
   color: #dfdce3;
@@ -301,31 +432,24 @@ tr:hover td{
 /* HOVER */
 ._NiPnavnav-ju ._Ninav-ju ._Niart-salir-jue :hover{
   color: #F0EBF4;
-  text-decoration: underline #e64398;
   border: #F0EBF4 solid 2px;
 }
 
 
 /*////////////////////////////////////////////// CCS DE FAQ /////////////////////////////////////*/
 /* TITULO */
-._Nibgh1-faq{
-  background-color: #F0EBF4;
-  border-radius: 3%;
-  width: 50%;
-}
-._Nititulo-contacto2{
-  font-size: 2.2rem;
+._NiTfaq{
+  color: #f7b733;
 }
 /* LISTADO DE PREGUNTAS */
 ._BlistaFaqzItem{
   display: block;
-  background-color: #f0ebf4;
   align-content: center;
   padding: 0.6rem;
   border: solid 1px #f0f0f0;
 }
 ._BlistaFaqTexto{
-  color: #e64398;
+  color: #f7b733;
   font-weight: bold;
   font-size: 0.85rem;
   text-align: center;
@@ -334,7 +458,6 @@ tr:hover td{
 ._Bsubtitulo{
   font-size: 1.25rem;
   color: #fc4a1a;
-  text-decoration: underline black;
 }
 /* COLOR Y DISEÑO DE LAS CAJAS */
 ._Nicajita-redessociales2{
@@ -349,11 +472,7 @@ tr:hover td{
 ._Nibgh1-registrate{
   background-color: #dfdce3;
   border-radius: 4%;
-  
-}
-._NibgblancoR{
-  background-color: #4abdac;
-  border-radius: 2%;
+  margin-top: 20vh;
 }
 /* TITULO */
 ._Natit-reg{
@@ -361,7 +480,7 @@ tr:hover td{
   text-align: center;
   margin-bottom: 10px;
   font-size: 2.5rem;
-  color: #fc4a1a;
+  color: #f7b733;
 }
 /* CUADRO COMPLETO DE SECTION */
 ._Nacuadro-completo-reg{
@@ -377,13 +496,14 @@ tr:hover td{
 ._Naico-reg-deco{
   font-size: 2.5em;
   color: #fc4a1a;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
 }
 /* ARTICLE COMPLETO DE REGISTRO PARTE IZQUIERDA */
 ._Nacuadro-info-reg{
   border-bottom: #fc4a1a solid 3px;
   border-left: #fc4a1a solid 3px;
   border-top: #fc4a1a solid 3px;
+  background-color: #4abdac;
   height: 80vh;
   border-radius: 2%;
 }
@@ -400,11 +520,12 @@ tr:hover td{
 ._Naseccion{
   width: 100%;
   border-right: solid #fc4a1a 3px;
+  background-color: #4abdac;
   border-radius: 3%;
 }
 /* CASILLAS DE INFO */
-._Naform-reg ._Nainp-input{
-  border: 2.5px solid #fc4a1a;
+._Nainp-input{
+  border: 1px solid black;
   background-color: #f7b733;
   text-align: center;
 }
@@ -423,22 +544,18 @@ tr:hover td{
 
 /*PRIMER BLOQUE*/
 ._Nititulo-contacto{
-  color: #dfdce3;
-  background-color: #4abdac;
-  border: solid 3px black;
+  color: #f7b733;
+  margin-top: 20vh;
+  margin-bottom: 5vh;
   width: 25%;
   border-radius: 4%;
 }
 ._Nibgmap-cont{
-  background-color: #4abdac;
-}
-._Ni-p-decoration{
-  background-color: black;
-  font-size: 3px;
-  width: 100%;
+  border: solid 2px rgba(128, 128, 128, 0.815);
+  margin-bottom: 10vh;
 }
 ._Nih6-fundado{
-  color: white;
+  color: #fc4a1a;
 }
 /*LOGOS TEL-MAIL-REDES*/
 ._Niicono-general{
@@ -454,8 +571,7 @@ tr:hover td{
   border-radius: 3%;      
 }
 ._Nih3-telefono{
-  color: black;
-  text-decoration: underline #f7b733;
+  color: #f7b733;
 }
 /*CAJITA MAIL*/
 ._Nicajita-email{
@@ -466,7 +582,6 @@ tr:hover td{
 }
 ._Nih3-email{
   color: #f7b733;
-  text-decoration: underline black;
 }
 /*CAJITA REDES*/
 ._Nicajita-redessociales{
@@ -475,8 +590,7 @@ tr:hover td{
   border-radius: 3%;
 }
 ._Nih3-redessociales{
-  color: black;
-  text-decoration: underline #f7b733;
+  color: #f7b733;
 }
 ._Niiconos-redessociales{
  color: #fc4a1a;
@@ -493,23 +607,29 @@ tr:hover td{
 ._Nicaja-comentario{
   background-color: #4abdac;
   margin: 2vh;
-  margin-bottom: 10vh;
+  margin: auto;
   border-radius: 3%;
+  width: 60%;
 }
 ._Nitext-comentario{
   color: white;
 }
 ._boton-enviar-comentario{
   background-color: #fc4a1a;
-  border: solid black;
+  border: solid black 1px;
   margin-bottom: 4vh;
+  width: 20%;
 }
 ._Nicolor-barra{
   background-color: #f7b733;
-  border: black 2px solid;
+  border: black 1px solid;
 }
 ._Niicono-dejatucoment{
   font-size: 1em;
+}
+._NiTw-barr{
+  width: 100%;
+  border-radius: 6%;
 }
 ._Nidejatucomentario{
   color: #dfdce3;
@@ -520,8 +640,8 @@ tr:hover td{
   border-radius: 4%;
   width: 20%;
   font-size: 3em;
-  margin-top: 6vh;
-  margin-bottom: 6vh;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
   color: #fc4a1a;
   border: #fc4a1a solid 4px;
 }
@@ -534,19 +654,11 @@ tr:hover td{
 
 /*//////////////////////////////////////////// MIN RESPONSIVE 992 /////////////////////////////////////// */
 @media (min-width: 992px) { 
-  /* HOVER AL NAV
-  header nav .navbar-nav a:hover{
-    text-decoration: underline;
-    border: #e64398 solid 2px;
-    opacity: .5;
-    border-radius: 10%;
-  } */
-
 
   /*//////////////////////////////////// MIN RESPONSIVE DE CONTACTO (992) /////////////////////////////*/
   /*MAPA*/
   ._Nigoogle-maps{
-    height: 80vh;
+    height: 35vh;
   }
       
   /*CAJA GRANDE DE MAIL-REDES-TEL*/
@@ -578,8 +690,6 @@ tr:hover td{
   /*HOVER ENVIAR COMENT*/
   section ._Nicaja-cometario form ._boton-enviar-comentario:hover{
     background-color: #f0ebf4;
-    color: #e64398;
-    border:#e64398 solid 2px;
   }
   /*/////////////////////////////////////////// MIN RESPONSIVE DE FAQ (992) //////////////////////////////////////////*/
   ._Bsubtitulo{
@@ -676,8 +786,6 @@ tr:hover td{
     margin: 0 auto;
     width: 100%;
     height: 87vh;
-    border-top: 3px solid #f172a1;
-    border-bottom: 3px solid #f172a1;
     border-radius: 4%;
     background-color: #a1c3d1;
   }
@@ -685,7 +793,6 @@ tr:hover td{
     background-color: #b39bcb;
     width: 85%;
     height: 55vh;
-    border: 3px solid #e64398;
     text-align: center;
   }
 
@@ -716,7 +823,7 @@ tr:hover td{
 @media (max-width: 992px) { 
   /*/////////////////////////////////////// MAX RESPONSIVE DE REGISTRO (992) ////////////////////////////*/
   ._Nacuadro-info-reg{
-    height: 65vh;
+    height: 100vh;
     width: 100%;
     margin-bottom: 5vh;
   }
@@ -739,7 +846,7 @@ tr:hover td{
     display: block;
   }
   ._Nacuadro-info-reg{
-    height: 85vh;
+    height: 120vh;
     margin-bottom: none;
   }
   /*/////////////////////////////////////// MAX RESPONSIVE DE CONTACTO (767.98) ////////////////////////////*/

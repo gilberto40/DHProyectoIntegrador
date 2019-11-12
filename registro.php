@@ -1,6 +1,6 @@
 <!-- CODIGO PHP -->
 <?php 
-  include_once "functions/funciones.php";
+
   include_once "loader.php";
     // Camino de la registración.
   // 1) Chequear que el formulario este cargando por POST.
@@ -12,31 +12,32 @@
   //  3.2) Guardarlo en json
   //  3.3) Guardar su imagen de perfil
   //  3.4) Redirigir al usuario a la página de inicio
-  if(usuarioLogueado()){
+  if(LogIn::verificar()){
     header("Location:homeJuego.php");
     exit;
   }
   if($_POST){
-
+    //2
     $ext = pathinfo($_FILES['avatar']['name'],PATHINFO_EXTENSION);
     $usuario = new Usuario($_POST['userName'],$_POST['email'],$_POST['password'],$_POST['confirmPassword'],$_POST['email'].".".$ext);
-    $errores = Validador::validarDatos($usuario);
-   
-  //  var_dump($errores);
-  //    exit;
+    $errores = Validador::validarDatos($usuario,$baseJson);
+    // var_dump($errores);
+    // exit;
   
     if(!$errores){
       $baseJson->crear($usuario);
       move_uploaded_file($_FILES['avatar']['tmp_name'],"fotos/".$usuario->getAvatar());
       //luego de crear el usuario y guardar todos sus datos y avatar, si todo esta bien logueramos al usuario y lo redirigiremos automaticamente al home
-      // loguearUsuario($_POST['email']);
-      // header("Location:homeJuego.php");
-      // exit;
+       LogIn::loguearUsuario($_POST['email']);
+       header("Location:homeJuego.php");
+        exit;
     }
   }
 ?>
 
-<?php include_once 'menu/navBar.php'; ?>
+
+
+<?php include_once "menu/navBar.php";?>
  
   <div class="container">
 
@@ -45,11 +46,11 @@
     </header>
 
     <main class="row">
-      <article class="_Nibgh1-registrate mt-4">
+      <article class="_Nibgh1-registrate">
         <h1 class="_Natit-reg">Registrate</h1>
       </article>
 
-      <section class="row _Nacuadro-completo-reg mt-4 mb-3 _NibgblancoR">
+      <section class="row _Nacuadro-completo-reg mb-3">
 
         <article class="col-12 _Nadeco-lin-reg">
           deco
@@ -74,7 +75,7 @@
 
         </article>
 
-        <article class="col-lg-6 col-sm-12 _Naseccion pb-2 ">
+        <article class="col-lg-5 col-sm-12 _Naseccion ml-2 pb-2 ">
 
           <form class=" text-center mt-5 _Naform-reg" action="registro.php" method="post" enctype="multipart/form-data">
             <div class="form-group text-white">
@@ -145,7 +146,7 @@
             </div>
 
             <div  class="botonesLogin">
-              <button type="submit" class="col-5 btn btn-primary btn-sm _Nacolor-entrar">Entrar</button>
+              <button type="submit" class="col-2 btn btn-primary btn-sm _Nacolor-entrar">Entrar</button>
             </div>
             
           </form>
@@ -158,13 +159,6 @@
 
   </div>
 
-  <footer class="mt-5">
+  <div class="mt-5">
     <?php   include "footer.php"; ?>
-  </footer>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
-</html>
+  </div>

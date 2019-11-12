@@ -1,14 +1,24 @@
-     <footer>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/master.css">
+    <title>Footer</title>
+</head>
+<body>
+    <footer>
             <section class="col-4 mt-3"> 
             <ion-icon class="mr-2 _Niicons-foot" name="code-working"></ion-icon>
             <article><strong>Información importante:</strong></article>
-            <article> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi unde vel.</article>
+            <article> Lorem ipsum, dolor sit amet consectetur.</article>
             </section>
 
             <section class="col-4 mt-3">
             <ion-icon class="mr-2 _Niicons-foot" name="logo-game-controller-a"></ion-icon> 
             <article><strong>Juego:</strong></article>
-            <article>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti magni corporis odio illo.</article>
+            <article>Lorem ipsum dolor sit, amet consectetur adipisicing.</article>
             </section>
 
             <section class="col-4 mt-3"> 

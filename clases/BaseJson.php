@@ -40,9 +40,21 @@
             $json = json_encode($usuarios,JSON_PRETTY_PRINT);
             file_put_contents($this->getBaseJson(),$json);
         }
+
+        public function update($baseJson,$usuario){
+            $id = $usuario['id'];
+            $json = file_get_contents($baseJson->getBaseJson());
+            $bd = json_decode($json,true);
+            $usuario['userName'] = $_POST['newNombre'];
+            $usuario['password']= password_hash($_POST['newPassword'],PASSWORD_DEFAULT);
+            $bd['usuarios'][$id-1] = $usuario;
+            $json=json_encode($bd,JSON_PRETTY_PRINT);
+            file_put_contents($baseJson->getBaseJson(),$json);
+            header('Location:homeJuego.php');
+            }
         
         // FUNCION PARA IMPRIMIR DATOS ANTERIORES QUE PASARON VALIDACION
-        function reincidencia($campo){
+        public function reincidencia($campo){
             if($_POST){
                 if(!isset($errores[$campo])){
                     echo $_POST[$campo];                        
@@ -52,7 +64,7 @@
         
         
         // FUNCION QUE TARE TODOS LOS DATOS DE UN USUARIO POR SU MAIL, LA USAREMOS EN LA COMPARACION DE EMAILS EN EL LOGIN Y EN EL PASSWORD_VERIFY
-        function buscarPorEmail($email){
+        public function buscarPorEmail($email){
             $json = file_get_contents($this->getBaseJson());
             $usuarios = json_decode($json,true);
             foreach($usuarios['usuarios'] as $usuario){
@@ -65,7 +77,7 @@
         
         
         // FUNCTION QUE BUSCA USUARIO YA EXISTENTE
-        function buscarPorUser($user){
+        public function buscarPorUser($user){
             $json = file_get_contents($this->getBaseJson());
             $usuarios = json_decode($json,true);
             foreach($usuarios['usuarios'] as $usuario){
@@ -78,11 +90,27 @@
         
         
         // SI EXISTE EL USUARIO UN TRUE
-        function existeUsuario($email){
+        public function existeUsuario($email){
             return $this->buscarPorEmail($email)!= NULL;
         }
             
-
+         public function editarRegistro($data){
+            $usuario = $this->buscarPorEmail($_SESSION['email']);
+            
+            $json=file_get_contents($this->getBaseJson());
+            $usuarios = json_decode($json,true);
+            $usuario['userName'] = $data['newNombre'];
+            $usuario['password'] = password_hash($data['newPassword'],PASSWORD_DEFAULT);
+            if($_FILES){
+                $ext = pathinfo($_FILES['newAvatar']['name'],PATHINFO_EXTENSION);
+                $usuario['avatar'] = $usuario['email'].".".$ext;
+            }
+            $posicion = $usuario['id'] - 1;
+            $usuarios['usuarios'][$posicion] = $usuario;
+            $json = json_encode($usuarios,JSON_PRETTY_PRINT);
+            file_put_contents("db.json",$json);
+            
+        }
 
 
 

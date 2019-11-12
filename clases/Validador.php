@@ -1,6 +1,6 @@
 <?php 
 class Validador{
-    static public function validarDatos($usuario){
+    static public function validarDatos($usuario,$baseJson){
         $errores = [];
         $datosFinales = [];
         // //aplicandole el trim() a todos los registros 
@@ -20,7 +20,7 @@ class Validador{
             $errores["userName"] = "No puedes usar numeros o caracteres especiales";
         }
         // PARA QUE NO EXISTA EL MISMO USER
-        if(buscarPorUser($usuario->getEmail())!=NULL){
+        if($baseJson->buscarPorUser($usuario->getEmail())!=NULL){
             $errores['userName'] = "Este nombre de usuario ya se encuentra ocupado";
         }
         //validacion del email 
@@ -31,7 +31,7 @@ class Validador{
         }
     
         // VERIFICAR SI YA EXISTE EL MAIL EN LA BASE DE DATOS 
-        if(existeUsuario($usuario->getEmail())){
+        if($baseJson->existeUsuario($usuario->getEmail())){
             $errores["email"] = "El email ya se encuentra registrado en otra cuenta ";
         }
     
@@ -85,6 +85,47 @@ class Validador{
         else if(!password_verify($logIn->getPasswordLogIn(),$data['password'])){
             $errores['passwordLogIn']= "contraseña no coinciden";
         }
+        return $errores;
+    }
+    static public function validarNewAvatar(){
+        $errores = [];
+        $ext = pathinfo($_FILES["newAvatar"]['name'], PATHINFO_EXTENSION);
+        if(strlen($_FILES["newAvatar"]["name"])==0){
+            $errores["newAvatar"] = "no agregaste nada";
+        }
+        else if($ext != "jpg" && $ext != "png" && $ext != "jpeg"){
+         $errores["newAvatar"] = "Elige  un archivo de tipo jpg o png o jpeg";   
+        }
+        return $errores;
+    }
+    static public function validarEdit($post,$baseJson){
+        $errores =[];
+        $data=$baseJson->buscarPorEmail($_SESSION['email']);
+        /*validaciones de user name*/
+        if(strlen($post["newNombre"]) == 0){
+            $errores["password"] = "No puedes dejar este campo vacio";
+            /* validadcion de el password anterior*/
+        }if(strlen($post["password"]) == 0){
+            $errores["password"] = "No puedes dejar este campo vacio";
+        }else if(!password_verify($post['password'],$data['password'])){
+            $errores['password']="no coincide con tu password anterior ";
+        }
+        /* validacion del nuevo password*/ 
+        if(strlen($post["password"]) == 0){
+            $errores["newPassword"] = "No puedes dejar este campo vacio";
+        } else if(strlen($post["password"]) <6){
+            $errores["newPassword"] = "la contraseña debe de tener mas de 6 caracteres";
+        } else if(!is_numeric($post["password"])){
+            $errores["newPassword"] = "La contraseña solo puede contener caracteres numericos";
+        }
+    /** validacion de la confirmacion del password y su comparacion entre el otro campo  */
+        if(strlen($post["newPasswordConfirm"]) == 0){
+            $errores["newPasswordConfirm"] = "No puedes dejar este campo vacio";
+        }else if($post["newPasswordConfirm"] != $post['newPassword']){
+            $errores["newPasswordConfirm"] = "no coinciden las contraseñas";
+        }
+    
+           
         return $errores;
     }
 
