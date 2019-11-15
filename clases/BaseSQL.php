@@ -17,6 +17,15 @@ class BaseSQL{
         }
     }
 
+    static public function buscar($tabla,$campo,$valor){
+        $sql = "SELECT * FROM $tabla WHERE $campo=$valor ";
+        $query = (BaseSQL::conexion())->prepare($sql);
+        $query->execute();
+        $registro =$query->fetchAll(PDO::FETCH_ASSOC);
+        return $registro;
+
+    }
+
 }
 
 

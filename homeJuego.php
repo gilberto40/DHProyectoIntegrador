@@ -1,8 +1,12 @@
 <?php
 include_once "loader.php";
+
 if(isset($_SESSION['email'])){
-  $usuario=$baseJson->buscarPorEmail($_SESSION['email']);
-  $userName = $usuario['userName'];
+  $email = $_SESSION['email'];
+ $registro = BaseSQL::buscar('usuarios','email',"'$email'");
+var_dump($registro);
+exit;
+ $userName = $usuario['userName'];
  $avatar =$usuario['avatar'];
 }else{
   header("Location:index.php");

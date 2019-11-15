@@ -1,8 +1,7 @@
 <?php 
 class Validador{
-    static public function validarDatos($usuario,$baseJson){
+    static public function validarDatos($usuario){
         $errores = [];
-        $datosFinales = [];
         // //aplicandole el trim() a todos los registros 
         // foreach($usuario as $key => $value){
         //     if($key == "userName" || $key == "email"){
@@ -14,13 +13,15 @@ class Validador{
         // }
     
         // VALIDAR USER NAME
+        $userName=$usuario->getUserName();
+        $email =$usuario->getEmail();
         if(strlen($usuario->getUserName())==0){
             $errores["userName"] = "No puedes dejar el campo vacio";
         }else if(!ctype_alpha($usuario->getUserName())){
             $errores["userName"] = "No puedes usar numeros o caracteres especiales";
         }
         // PARA QUE NO EXISTA EL MISMO USER
-        if($baseJson->buscarPorUser($usuario->getEmail())!=NULL){
+        if(BaseSQL::buscar("usuarios","userName","'$userName'")!=NULL){
             $errores['userName'] = "Este nombre de usuario ya se encuentra ocupado";
         }
         //validacion del email 
@@ -31,7 +32,7 @@ class Validador{
         }
     
         // VERIFICAR SI YA EXISTE EL MAIL EN LA BASE DE DATOS 
-        if($baseJson->existeUsuario($usuario->getEmail())){
+        if(BaseSQL::buscar('usuarios','email',"'$email'")!=NULL){
             $errores["email"] = "El email ya se encuentra registrado en otra cuenta ";
         }
     

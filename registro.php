@@ -19,13 +19,13 @@
   if($_POST){
     //2
     $ext = pathinfo($_FILES['avatar']['name'],PATHINFO_EXTENSION);
-    $usuario = new Usuario($_POST['userName'],$_POST['email'],$_POST['password'],$_POST['confirmPassword'],$_POST['email'].".".$ext);
-    $errores = Validador::validarDatos($usuario,$baseJson);
+    $usuario = new  Jugador($_POST['userName'],$_POST['email'],$_POST['password'],$_POST['confirmPassword'],$_POST['email'].".".$ext);
+    $errores = Validador::validarDatos($usuario);
     // var_dump($errores);
     // exit;
   
     if(!$errores){
-      $baseJson->crear($usuario);
+      $usuario->create($bd);
       move_uploaded_file($_FILES['avatar']['tmp_name'],"fotos/".$usuario->getAvatar());
       //luego de crear el usuario y guardar todos sus datos y avatar, si todo esta bien logueramos al usuario y lo redirigiremos automaticamente al home
        LogIn::loguearUsuario($_POST['email']);
