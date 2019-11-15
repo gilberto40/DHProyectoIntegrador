@@ -32,8 +32,9 @@
           if(!$_SESSION){
             $_SESSION['email']=$_COOKIE['email'];
           }
-          $usu = $baseJson->buscarPorEmail($_SESSION['email']);
-          $rol = $usu['rol'];
+          $email = $_POST['emailLogIn'];
+          $usu = BaseSQL ::buscar('usuarios','email',"'$email'");
+          $rol = $usu[0]['rol'];
           if($rol == 2){
             header('Location:homeAdmin.php');
           }else{

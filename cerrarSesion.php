@@ -1,5 +1,5 @@
 <!-- CERRAR SESION -->
 <?php 
-include_once "functions/funciones.php";
-cerrarSesion();
+include_once "loader.php";
+LogIn::logOut();
 ?>

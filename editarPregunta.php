@@ -1,13 +1,16 @@
 <?php
 require_once 'loader.php';
 
+
 if($_POST){
+    
    $pyr = new PreguntaRespuesta($_POST['editPregunta'],$_POST['editRespuesta1'],$_POST['editRespuesta2'],$_POST['editRespuesta3'],$_POST['editRespuestaCorrecta']);
    $pyr->update($bd,$_POST['id']);
 
 
+}else{$id = $_GET['id'];
+$registro=BaseSQL::buscar('preguntasRespuestas','id',$id);
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,31 +32,31 @@ if($_POST){
                 <h1 class="_NiTh1edit-preg">Editar preguntas</h1>
 
                 <div class="_Nibotpreg">            
-                    <a href="homeAdmin.php" class="_NiBsalPreg btn btn-lg active" role="button" aria-pressed="true">Salir</a>
+                    <a href="preguntas.php" class="_NiBsalPreg btn btn-lg active" role="button" aria-pressed="true">Salir</a>
                     <button type="submit" class="_NiBeditpreg btn btn-lg active" role="button" aria-pressed="true">Realizar cambios</button> 
                 </div>
 
                 <!--Edit Pregunta-->
                 <section class="_Niingresa-preg text-center">
 
-                    <input type="text" class="text-center _NicampEPreg" id="ingresarPregunta" placeholder="Ingresar pregunta" name="editPregunta" value="">
+                    <input type="text" class="text-center _NicampEPreg" id="ingresarPregunta" placeholder="Ingresar pregunta" name="editPregunta" value="<?=$registro[0]['pregunta'];?>">
 
                 </section>
 
                 <!--Edit Respuestas-->  
                     
                     <article class="col-5">
-                        <input type="text" class="text-center _NicampR-editP" id="" placeholder="1.- Respuesta 1" name="editRespuesta1" value="">
+                        <input type="text" class="text-center _NicampR-editP" id="" placeholder="1.- Respuesta 1" name="editRespuesta1" value="<?=$registro[0]['respuesta1'];?>">
                     </article>
                     <article class="col-5">
-                        <input type="text" class="text-center _NicampR-editP" id="" placeholder="2.- Respuesta2" name="editRespuesta2" value="">
+                        <input type="text" class="text-center _NicampR-editP" id="" placeholder="2.- Respuesta2" name="editRespuesta2" value="<?=$registro[0]['respuesta2'];?>">
                     </article>
 
                     <article class="col-5">
-                        <input type="text" class="text-center _NicampR-editP" id="" placeholder="3.- Respuesta 3" name="editRespuesta3" value="">
+                        <input type="text" class="text-center _NicampR-editP" id="" placeholder="3.- Respuesta 3" name="editRespuesta3" value="<?=$registro[0]['respuesta3'];?>">
                     </article>
                     <article class="col-5">
-                        <input type="text" class="text-center _NicampR-editP" id="" placeholder="4.- Respuesta Correcta" name="editRespuestaCorrecta" value="">
+                        <input type="text" class="text-center _NicampR-editP" id="" placeholder="4.- Respuesta Correcta" name="editRespuestaCorrecta" value="<?=$registro[0]['respuestaCorrecta'];?>">
                     </article>
                     <input type="hidden" name="id" value="<?=$_GET['id']?>">
                   

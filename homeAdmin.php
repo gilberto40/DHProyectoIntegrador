@@ -41,7 +41,7 @@
             </article>
 
             <article class="mt-3">
-                <a href="editarPreguntas.php"><button type="button" class="btn _Nibtns-hom">Agregar pregunta</button></a>
+                <a href="agregarPregunta.php"><button type="button" class="btn _Nibtns-hom">Agregar pregunta</button></a>
             </article>
 
             <article class="mt-3">

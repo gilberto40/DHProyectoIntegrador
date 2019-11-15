@@ -65,6 +65,11 @@ class preguntaRespuesta{
         $query->execute();
         header('Location:preguntas.php');
     }
+    static public function old($campo,$pyc){
+        if(!$errores[$campo]){
+            return $pyc;
+        }
+    } 
     // public function delete(){
 
     // }

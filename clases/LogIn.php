@@ -28,6 +28,12 @@ class LogIn{
     static public function verificar(){
         return isset($_SESSION['email']);
     }
+
+    static public function logOut(){
+        session_destroy();
+        header('Location:index.php');
+        exit;
+    }
     
 
 }
