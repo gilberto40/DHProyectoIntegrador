@@ -20,7 +20,7 @@
                 </article>
             
                 <article class="_Niart-salir-jue">
-                    <a href="" class="btn _Nibot-sal-ju btn-lg active" role="button" aria-pressed="true">Cerrar sesión</a>
+                    <a href="cerrarSesion.php" class="btn _Nibot-sal-ju btn-lg active" role="button" aria-pressed="true">Cerrar sesión</a>
                 </article>
 
             </section>

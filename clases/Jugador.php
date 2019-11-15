@@ -5,7 +5,7 @@ class Jugador extends Usuario{
         $this->email = $email;
         $this->password = $password;
         $this->confirmPassword = $confirmPassword;
-        $this->rol =2;
+        $this->rol =1;
         $this->avatar = $avatar;
     }
     public function getUserName(){

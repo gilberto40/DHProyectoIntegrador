@@ -6,7 +6,7 @@ class Administrador extends Usuario{
         $this->email = $email;
         $this->password = $password;
         $this->confirmPassword = $confirmPassword;
-        $this->rol =1;
+        $this->rol =2;
         $this->avatar = $avatar;
     }
 
