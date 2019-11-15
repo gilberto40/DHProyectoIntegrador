@@ -23,7 +23,7 @@
   }else{
       if($_POST){
         $logIn = new LogIn($_POST['emailLogIn'],$_POST['passwordLogIn']);
-        $errores = Validador::validarLogIn($logIn,$baseJson);
+        $errores = Validador::validarLogIn($logIn);
         // var_dump($errores);
         // exit;
         if(!$errores){

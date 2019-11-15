@@ -32,7 +32,7 @@ class Jugador extends Usuario{
         $query = $bd->prepare($sql);
         $query->bindValue(':userName',$this->getUserName());
         $query->bindValue(':email',$this->getEmail());
-        $query->bindValue(':password',$this->getPassword());
+        $query->bindValue(':password',password_hash($this->getPassword(),PASSWORD_DEFAULT));
         $query->bindValue(':avatar',$this->getAvatar());
         $query->bindValue(':rol',$this->getRol());
         $query->execute();

@@ -64,9 +64,11 @@ class Validador{
     }
 
 
-    static  public function validarLogIn($logIn,$baseJson){
+    static  public function validarLogIn($logIn){
         $errores=[];
-        $data = $baseJson->buscarPorEmail($logIn->getEmailLogIn());
+        $email =$logIn->getEmailLogIn();
+        $data =BaseSQL::buscar('usuarios','email',"'$email'");
+        $password =$data[0]['password'];
     
         // VALIDAR EMAIL
         if(strlen($logIn->getEmailLogIn()) == 0){
@@ -75,7 +77,7 @@ class Validador{
         else if(!filter_var($logIn->getEmailLogIn(),FILTER_VALIDATE_EMAIL)){
             $errores['emailLogIn'] = "Email invalido";
         }
-        else if(!$baseJson->existeUsuario($logIn->getEmailLogIn())){
+        else if($data[0]['email']=NULL){
             $errores['emailLogIn'] = "Usuario no registrado";
         }
     
@@ -83,7 +85,7 @@ class Validador{
         if(strlen($logIn->getPasswordLogIn()== 0)){
             $errores['passwordLogIn'] ="Debes llenar el campo clave "; 
         }
-        else if(!password_verify($logIn->getPasswordLogIn(),$data['password'])){
+        else if(!password_verify($logIn->getPasswordLogIn(),$password)){
             $errores['passwordLogIn']= "contraseña no coinciden";
         }
         return $errores;

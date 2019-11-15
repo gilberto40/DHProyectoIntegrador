@@ -2,7 +2,7 @@
 class LogIn{
     private $emailLogin;
     private $passwordLogin;
-    private $recordarme;
+    
 
     public function __construct($emailLogin,$passwordLogin){
         $this->emailLogin = $emailLogin;
