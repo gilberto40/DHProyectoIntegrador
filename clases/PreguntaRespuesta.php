@@ -48,9 +48,23 @@ class preguntaRespuesta{
         $registro = $query->fetchAll(PDO::FETCH_ASSOC);
         return $registro;
     }
-    // public function update(){
-
-    // }
+    static public function delete($bd,$id){
+        $sql = 'DELETE FROM preguntasRespuestas WHERE id ='.$id;
+        $query = $bd->prepare($sql);
+        $query->execute();
+        header('Location:preguntas.php');
+    }
+    public function update($bd,$id){
+        $sql = "UPDATE preguntasRespuestas SET pregunta =:pregunta,respuesta1=:respuesta1,respuesta2=:respuesta2,respuesta3=:respuesta3,respuestaCorrecta=:respuestaCorrecta WHERE id=$id";
+        $query = $bd->prepare($sql);
+        $query->bindValue(':pregunta',$this->getPregunta());
+        $query->bindValue(':respuesta1',$this->getRespuesta1());
+        $query->bindValue(':respuesta2',$this->getRespuesta2());
+        $query->bindValue(':respuesta3',$this->getRespuesta3());
+        $query->bindValue(':respuestaCorrecta',$this->getRespuestaCorrecta());
+        $query->execute();
+        header('Location:preguntas.php');
+    }
     // public function delete(){
 
     // }

@@ -25,7 +25,7 @@ $registro =PreguntaRespuesta::read($bd);
         <div>
             <div class="_Nibotpreg">            
                 <a href="homeAdmin.php" class="_NiBsalPreg btn btn-lg active" role="button" aria-pressed="true">Salir</a>
-                <a href="editarPreguntas.php" class="_NiBeditpreg btn btn-lg active" role="button" aria-pressed="true">Agregar pregunta</a>
+                <a href="agregarPregunta.php" class="_NiBeditpreg btn btn-lg active" role="button" aria-pressed="true">Agregar pregunta</a>
             </div>
         </div>
 
@@ -46,8 +46,8 @@ $registro =PreguntaRespuesta::read($bd);
                     <td><?php echo $value['id'];?></td>
                     <td><?php echo $value['pregunta'];?></td>
                     <td><?php echo $value['respuestaCorrecta'];?></td>
-                    <td><a href="editarPreguntas.php"><ion-icon name="create"></ion-icon></a></td>
-                    <td><a href=""><ion-icon name="close"></ion-icon></a></td>
+                    <td><a href="editarPregunta.php?id=<?=$value['id'];?>"><ion-icon name="create"></ion-icon></a></td>
+                    <td><a href="eliminarPregunta.php?id=<?=$value['id']?>"><ion-icon name="close"></ion-icon></a></td>
                 </tr>
             <?php endforeach?>
             </tbody>
