@@ -13,8 +13,4 @@ include_once 'clases/Administrador.php';
 $baseJson = new BaseJson('db.json');
 $bd = BaseSQL::conexion();
 
-
-
-
-
 ?>
