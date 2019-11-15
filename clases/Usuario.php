@@ -8,6 +8,9 @@
     private $rol;
     private $avatar;
  
+    public function exists(){
+        
+    }
 }
 
 

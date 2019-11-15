@@ -4,10 +4,8 @@ include_once "loader.php";
 if(isset($_SESSION['email'])){
   $email = $_SESSION['email'];
  $registro = BaseSQL::buscar('usuarios','email',"'$email'");
-var_dump($registro);
-exit;
- $userName = $usuario['userName'];
- $avatar =$usuario['avatar'];
+ $userName = $registro[0]['userName'];
+ $avatar =$registro[0]['avatar'];
 }else{
   header("Location:index.php");
   exit;
