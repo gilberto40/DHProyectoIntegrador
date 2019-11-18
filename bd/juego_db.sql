@@ -18,7 +18,8 @@ CREATE TABLE  usuarios (
     userName VARCHAR(15) NOT NULL,
     email VARCHAR(30) NOT NULL,
     password VARCHAR(60) NOT NULL,
-    avatar VARCHAR(30) NOT NULL
+    avatar VARCHAR(30) NOT NULL,
+    rol INT NOT NULL
 );
 DROP TABLE IF EXISTS partidas ;
 CREATE TABLE partidas(
