@@ -1,14 +1,10 @@
 <?php
-include_once "functions/funciones.php";
+include_once "loader.php";
 
-if(!usuarioLogueado()){
+if(!isset($_SESSION['email'])){
     header("Location:index.php");
     exit;
-}else{
-    $usuario=buscarPorEmail($_SESSION['email']);
-    $avatar = $usuario['avatar'];
 }
-
 
 
 ?>

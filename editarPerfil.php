@@ -1,15 +1,15 @@
 <?php
 include_once "loader.php";
 if(isset($_SESSION['email'])){
-    $usuario=$baseJson->buscarPorEmail($_SESSION['email']);
-    $userName = $usuario['userName'];
-    $avatar =$usuario['avatar'];
-    $id=$usuario['id'];
-    $passwordAnt = $usuario['password'];
+    $email = $_SESSION['email'];
+    $usuario=BaseSQL::buscar('usuarios','email',"'$email'");
+    $userName = $usuario[0]['userName'];
+    $avatar =$usuario[0]['avatar'];
+    $id=$usuario[0]['id'];
+    $passwordAnt = $usuario[0]['password'];
     if($_POST){
   
-    $errores=Validador::validarEdit($_POST,$baseJson);
-    
+    $errores=Validador::validarEdit($_POST,$usuario);
     if(!$errores){
         if($_FILES){
             $errorAvatar = Validador::validarNewAvatar();
@@ -20,7 +20,7 @@ if(isset($_SESSION['email'])){
 
       
         }
-        $baseJson->update($baseJson,$usuario);
+        Jugador::update($bd,$id,$_POST['newNombre'],$_POST['newPassword']);
     }
     }
 }
@@ -29,32 +29,8 @@ if(isset($_SESSION['email'])){
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/master.css">
-    <title>Editar Perfil</title>
-</head>
-
-
+<?php include_once "menu/navBar.php";?>
 <body class="_Nibgedit-perf">
-
-            <section class="_Ninav-ju mt-2">
-                
-                <article>
-                <a class=""><img class="_Nifot-nav" width="50" heigth="50" src="fotos/foto-default.png" alt=""></a>
-                </article>
-            
-                <article class="_Niart-salir-jue">
-                    <a href="homeJuego.php" class="btn _Nibot-sal-ju btn-lg active" role="button" aria-pressed="true">Salir</a>
-                </article>
-
-            </section>
-
     <div class="container">
     
         <?php
@@ -66,7 +42,7 @@ if(isset($_SESSION['email'])){
 
         }?>
 
-        <form class="" action="" method="post" enctype="multipart/form-data">
+        <form class="" action="editarPerfil.php" method="post" enctype="multipart/form-data">
 
             <section class="_NisecP-edit text-center">
                 <h1 class="_Nih1edit-perf">Editar perfil</h1>

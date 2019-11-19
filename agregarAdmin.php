@@ -1,10 +1,13 @@
 <?php 
-include_once 'laoder.php';
-
-
-
-
-
+include_once 'loader.php';
+if($_POST){
+    $admin = new Administrador($_POST['userName'],$_POST['email'],$_POST['password'],$_POST['confirmPassword']);
+    
+    $errores =Validador::validarDatosAdministrador($admin);
+    if(!$errores){
+        $admin->create($bd);
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +40,7 @@ include_once 'laoder.php';
         <img class="_NilogoAgg-admin" src="img/nuevoAdmin.png" width="100" heigth="100" alt="">
     </div>
 
-    <form class="col-4 text-center _NicuaAgg-adm" action="" method="post">
+    <form class="col-4 text-center _NicuaAgg-adm" action="agregarAdmin.php" method="post">
 
         <div class="form-group text-white">
 

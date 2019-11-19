@@ -36,7 +36,7 @@ class Jugador extends Usuario{
         $query->bindValue(':avatar',$this->getAvatar());
         $query->bindValue(':rol',$this->getRol());
         $query->execute();
-        header('Location:homeAdmin.php');
+        header('Location:homeJuego.php');
     }
 //    static  public function read($bd){
 //         $sql = "SELECT id,pregunta,respuesta1,respuesta2,respuesta3,respuestaCorrecta FROM preguntasRespuestas ";
@@ -51,17 +51,14 @@ class Jugador extends Usuario{
 //         $query->execute();
 //         header('Location:preguntas.php');
 //     }
-//     public function update($bd,$id){
-//         $sql = "UPDATE preguntasRespuestas SET pregunta =:pregunta,respuesta1=:respuesta1,respuesta2=:respuesta2,respuesta3=:respuesta3,respuestaCorrecta=:respuestaCorrecta WHERE id=$id";
-//         $query = $bd->prepare($sql);
-//         $query->bindValue(':pregunta',$this->getPregunta());
-//         $query->bindValue(':respuesta1',$this->getRespuesta1());
-//         $query->bindValue(':respuesta2',$this->getRespuesta2());
-//         $query->bindValue(':respuesta3',$this->getRespuesta3());
-//         $query->bindValue(':respuestaCorrecta',$this->getRespuestaCorrecta());
-//         $query->execute();
-//         header('Location:preguntas.php');
-//     }
+    static public function update($bd,$id,$userName,$password){
+        $sql = "UPDATE usuarios SET userName = :userName,password = :password WHERE id=$id";
+        $query = $bd->prepare($sql);
+        $query->bindValue(':userName',$userName);
+        $query->bindValue(':password',password_hash($password,PASSWORD_DEFAULT));
+        $query->execute();
+        header('Location:homeJuego.php');
+    }
     
 }
 

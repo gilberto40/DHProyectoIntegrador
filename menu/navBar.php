@@ -32,7 +32,7 @@
                         </div>        
                     </div>
                 <div id="opcionesUsuario">
-                    <li><a href="editar.php">Editar Perfil</a></li>
+                    <li><a href="editarPerfil.php">Editar Perfil</a></li>
                     <hr>
                     <li><a href="cerrarSesion.php">Salir</a></li>
                 </div>
